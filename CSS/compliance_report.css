@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary: #000;
+  --white: #fff;
+  --background: #BED7DC;
+  --gray: #d3d3d3;
+  --input-border: #03a9f4;
+  --button-background: #03a9f4;
+  --back-button: #6c757d;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  border: 3px black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+ 
+}
+
+.form {
+  background-color: var(--white);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+ 
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.message {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--input-border);
+}
+
+.input + span {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  color: grey;
+  font-size: 1rem;
+  cursor: text;
+  transition: 0.3s ease;
+  pointer-events: none;
+  background-color: var(--white);
+  padding: 0 0.25rem;
+}
+
+.input:focus + span,
+.input:valid + span {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  color: var(--input-border);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.submit, .back {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit {
+  background-color: var(--button-background);
+  width: 30%;
+}
+
+.submit:hover {
+  background-color: #0288d1;
+}
+
+.back {
+  background-color: var(--back-button);
+  width: 20%;
+}
+
+.back:hover {
+  background-color: #5a6268;
+}
