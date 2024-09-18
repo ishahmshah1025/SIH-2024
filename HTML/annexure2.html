@@ -1,0 +1,215 @@
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleSections = [
+                { toggle: 'annexure-toggle', content: 'annexure-content' },
+                { toggle: 'affidavit-toggle', content: 'affidavit-content' },
+                { toggle: 'certificate-toggle', content: 'certificate-content' }
+            ];
+
+            toggleSections.forEach(section => {
+                const toggleElement = document.getElementById(section.toggle);
+                const contentElement = document.getElementById(section.content);
+
+                toggleElement.addEventListener('click', function() {
+                    contentElement.classList.toggle('hidden');
+                    this.classList.toggle('fa-minus');
+                    this.classList.toggle('fa-plus');
+                });
+            });
+        });
+    </script>
+    <style>
+      #body2{
+        margin: 50px;
+        margin-top: 100px;
+      }
+
+      .body1{
+        margin: 0px;
+      }
+  .navbar {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    padding: 10px 20px;
+    margin: 0; /* Remove margins */
+    position: fixed; /* Stick to the top */
+    top: 0;
+    left: 0; /* Align it to the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Make sure it stays above other elements */
+    margin-bottom: 20px;
+}
+.body2 {
+    padding-top: 70px; /* Adjust this based on your navbar height */
+}
+
+   .navdiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .navdiv .logo img {
+    height: 50px;
+    padding: 5px;
+   }
+   .navdiv ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+   }
+   .navdiv ul li {
+    margin-left: 20px;
+   }
+   .navdiv ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+   }
+   .navdiv .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+   }
+   .navdiv .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+   }
+   @media (max-width: 768px) {
+    .navdiv ul {
+     display: none;
+    }
+    .navdiv .hamburger {
+     display: flex;
+    }
+   }
+   .footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+   }
+
+
+
+
+  </style>
+<div class="body1">
+  <nav class="navbar">
+   <div class="navdiv">
+    <div class="logo">
+     <a href="homepage.html">
+      <img alt="inspX.ai Logo" height="50" src="./assets/logo.png" style="padding: 5px;"/>
+     </a>
+    </div>
+    <ul>
+     <li>
+      <a href="homepage.html">
+       Home
+      </a>
+     </li>
+     <li>
+      <a href="options.html">
+       Login
+      </a>
+     </li>
+    </ul>
+    <div class="hamburger">
+     <div>
+     </div>
+     <div>
+     </div>
+     <div>
+     </div>
+    </div>
+   </div>
+  </nav>
+</div>
+</head>
+<body class="bg-blue-100" id="body2">
+   
+    <div class="container mx-auto mt-4">
+        <div class="bg-gray-800 text-white p-4 rounded-t">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">Annexures</div>
+                <div>
+                    <i id="annexure-toggle" class="fas fa-minus cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div id="annexure-content" class="bg-white p-4 border border-gray-800">
+            <p class="text-gray-700 mb-2">Click below to find out more information</p>
+            <p class="text-gray-500 mb-4">Note: Click below the links to read the relative content.</p>
+            <ul class="list-none">
+                <li class="mb-2"><a href="upload_excel.html" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-1: Documents to be uploaded/submitted / shown for Setting up a New Technical Institution</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE 2  Documents to be uploaded submitted by Existing Institutions.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-2: Documents to be uploaded/submitted by Existing Institutions</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%203%20Norms%20for%20Land%20and%20Built%20up%20Area%20Requirements%20of%20the.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-3: Norms for Land and Built-up Area Requirements of the Technical Institutions</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%204%20norms%20for%20books%20library%20facilities.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-4: Norms for Books, Library facilities, Computer, Software, Internet and Laboratory Equipment of the Technical Institutions</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-5%20norms%20for%20faculty%20requirements.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-5: Norms for Faculty Requirements and Cadre Ratio of the Technical Institutions</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-6%20norms%20for%20pgdm%20pgcm%20courses.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-6: Norms for PGDM/PGCM Courses</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-7%20process%20flow%20chart%20for%20the%20establishment.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-7: Process Flow Chart for the Establishment of a New Technical Institution Issue of LoA/ LoR</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-8%20norms%20for%20duration%20entery%20level%20qualifications%20and%20statutory%20reservations%20for%20the%20technical.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-8: Norms for Duration, Entry Level Qualifications and Statutory Reservations for the Technical Programmes</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-9%20mba%20pgdm%20in%20iev.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-9: MBA/PGDM in Innovation, Entrepreneurship and Venture Development (IEV)</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-10%20undertaking%20to%20be%20submitted%20by%20the%20applicant%20institute.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-10: Undertaking to be submitted by the Applicant Institute / University on Letter head for Student Induction Program, Examination reforms & Internship Policy</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%2011%20approved%20nomenclature%20of%20courses.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-11: Approved Nomenclature of Courses</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-12%20Closest%20available%20Nomenclature.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-12: Closest available Nomenclature</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-13%20major%20disciplines.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-13: Major Disciplines, their corresponding Courses and Relevant/ Appropriate Branch of Under Graduate Degree/Diploma in Engineering and Technology and Vice-Versa</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE-14%20State%20Wise%20Competent.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-14: State Wise Competent Authorities to issue Certificates with Respect to the Land/ Building</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%2015%20FELLOWPROGRAM.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-15: Fellow Programme in Management: Conduct and Admission Procedure</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%2016%20STRUCTURE%20OF%20VARIOUS%20COMMITTEES.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-16: Structure of Various Committees</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%2017%20RECOMMENDED%20COMPOSITION%20OF%20BOARD.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-17: Recommended Composition of Board of Governors (BoG)/ Board of Management (BoM) of the Technical Institutions</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/ANNEXURE%2018%20MANDATORY%20DISCLOSURES.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> ANNEXURE-18: Mandatory Disclosures</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mx-auto mt-4">
+        <div class="bg-gray-800 text-white p-4 rounded-t">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">Affidavits</div>
+                <div>
+                    <i id="affidavit-toggle" class="fas fa-minus cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div id="affidavit-content" class="bg-white p-4 border border-gray-800">
+            <p class="text-gray-700 mb-2">Click below to find out more information</p>
+            <p class="text-gray-500 mb-4">Note: Click below the links to read the relative content.</p>
+            <ul class="list-none">
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-1%20for%20creation%20of%20new%20password%20forgotten%20password.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-1: For creation of New Password/Forgotten Password</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-2%20for%20the%20applications%20submitted%20under%20chapter%201%202%204.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-2: For the Applications Submitted under Chapter 1,2 & 4</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-3%20for%20submitting%20the%20security%20deposit%20upon%20establishment%20of%20nrew%20tech%20institute%20new%20prog%20new%20level.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-3: For submitting the security deposit upon establishment of New Technical Institute, New program, New level</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-4%20for%20the%20progressive%20complete%20closure.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-4: For the Progressive/Complete Closure of the Institution</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-5%20for%20the%20compliance%20of%20AICTE%20norms%20for%20universities%20chapter%204.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-5: For the compliance of AICTE norms For Universities applying as per Chapter IV notified by the UGC</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-6%20for%20the%20release%20of%20security%20deposit.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-6: For the Release of Security Deposit</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-7%20for%20transfer%20of%20private%20property%20building.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-7: For transfer of private Property / Building</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-8%20for%20additional%20course%20increase%20in%20intake.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-8: For Additional Course/ Increase in Intake</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-9%20for%20change%20in%20the%20bank%20details.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-9: For change in the Bank details</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-10%20for%20change%20in%20the%20name%20address%20of%20the%20trust%20society%20company.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-10: For Change in the Name / Address of the Trust / Society/ Company</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-11%20for%20collaboration%20and%20twinning.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-11: For Collaboration and Twinning Programme Between Foreign University / Institution OR Institute of National Importance / Eminence of India and AICTE Approved Institution</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-12.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-12: For Conducting Academic Course(s) of other Regulatory Bodies</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/AFFIDAVIT-13.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> AFFIDAVIT-13: For Conducting Open and Distance Learning (ODL) / Online Learning Mode</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mx-auto mt-4">
+        <div class="bg-gray-800 text-white p-4 rounded-t">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">Certificates</div>
+                <div>
+                    <i id="certificate-toggle" class="fas fa-minus cursor-pointer"></i>
+                </div>
+            </div>
+        </div>
+        <div id="certificate-content" class="bg-white p-4 border border-gray-800">
+            <p class="text-gray-700 mb-2">Click below to find out more information</p>
+            <p class="text-gray-500 mb-4">Note: Click below the links to read the relative content.</p>
+            <ul class="list-none">
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/CERTIFICATE-1.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> CERTIFICATE-1: Certificate of an Advocate (To be produced in the Letterhead of Advocate)</a></li>
+                <li class="mb-2"><a href="https://www.aicte-india.org/sites/default/files/CERTIFICATE-2.pdf" target="_blank" class="text-orange-600"><i class="fa fa-caret-right" aria-hidden="true"></i> CERTIFICATE-2: Certificate of an Advocate (To be produced in the Letterhead of Advocate)</a></li>
+              </ul>
+              </div>
+              </div>
+              </body>
+              </html>
