@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspector Profiles</title>
+  <link rel="stylesheet" href="inspector-profiles.css">
+</head>
+
+<style>
+    :root {
+      --primary-color: #0288d1;
+      --secondary-color: #03a9f4;
+      --background-color: #BED7DC;
+      --text-color: #333;
+      --card-bg-color: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body{
+        background-color: #BED7DC;
+        margin: 0;
+    }
+    .navbar {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      padding: 10px 20px;
+    }
+
+    .navdiv {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navdiv .logo img {
+      height: 50px;
+      padding: 5px;
+    }
+
+    .navdiv ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navdiv ul li {
+      margin-left: 20px;
+    }
+
+    .navdiv ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navdiv .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .navdiv .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .navdiv ul {
+        display: none;
+      }
+      .navdiv .hamburger {
+        display: flex;
+      }
+    }
+
+  
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f5f5f5;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo">
+        <a href="homepage.html">
+          <img src="./assets/logo.png" alt="inspX.ai Logo" height="50" style="padding: 5px;">
+        </a>
+      </div>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="options.html">Login</a></li>
+      </ul>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <h1>Inspector Profiles</h1>
+    <a href="{% url 'inspector_create' %}" class="btn">Add Inspector</a>
+    <table id="inspector-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Region</th>
+          <th>Expertise</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for inspector in inspectors %}
+        <tr>
+          <td>{{ inspector.name }}</td>
+          <td>{{ inspector.email }}</td>
+          <td>{{ inspector.region }}</td>
+          <td>{{ inspector.expertise }}</td>
+          <td>
+            <a href="{% url 'inspector_detail' inspector.id %}">View</a>
+            <a href="{% url 'inspector_update' inspector.id %}">Edit</a>
+            <a href="{% url 'inspector_delete' inspector.id %}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div id="inspector-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h1 style="color: #0288d1; ">Inspector Profile</h1>
+      <form id="inspector-form" action="{% url 'inspector_create' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="region">Region:</label>
+          <input type="text" id="region" name="region" required>
+        </div>
+        <div class="form-group">
+          <label for="expertise">Expertise:</label>
+          <textarea id="expertise" name="expertise" required></textarea>
+        </div>
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="inspector-profiles.js"></script>
+</body>
+</html>
